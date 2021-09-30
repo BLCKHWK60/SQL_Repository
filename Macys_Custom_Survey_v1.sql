@@ -21,7 +21,12 @@ from interaction_resource_fact irf
     inner join resource_                    r       on  (r.resource_key                 =       irf.last_vqueue_resource_key)
 
 Where 
-    dt.CAL_DATE >= CURRENT_DATE - 14
+    (Irf.start_date_time_key BETWEEN 
+        (SELECT RANGE_END_KEY-1 FROM RELATIVE_RANGE WHERE RANGE_NAME='Today' ) – 86400*7
+            AND
+        (SELECT RANGE_START_KEY FROM RELATIVE_RANGE WHERE RANGE_NAME= 'Today') 
+    )
+
 and iudk.post_call_survey_key_1 > 0
 )
  
