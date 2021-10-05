@@ -21,13 +21,9 @@ from interaction_resource_fact irf
     inner join resource_                    r       on  (r.resource_key                 =       irf.last_vqueue_resource_key)
 
 Where 
-    (Irf.start_date_time_key BETWEEN 
-        (SELECT RANGE_END_KEY-1 FROM RELATIVE_RANGE WHERE RANGE_NAME='Today' ) – 86400*7
-            AND
-        (SELECT RANGE_START_KEY FROM RELATIVE_RANGE WHERE RANGE_NAME= 'Today') 
-    )
-
-and iudk.post_call_survey_key_1 > 0
+(dt.cal_date between CURRENT_DATE - 7 and CURRENT_DATE)
+and 
+iudk.post_call_survey_key_1 > 0
 )
  
 Select  
@@ -50,5 +46,5 @@ from Survey_Answers sa
             from interaction_resource_fact irf  
                 join resource_  r   on  irf.resource_key        =   r.resource_key   
                 join DATE_TIME  dt  on  (dt.date_time_key       =   irf.start_date_time_key) 
-            where r.resource_type in ('Agent', 'Queue') and dt.CAL_DATE >= CURRENT_DATE - 14
+            where r.resource_type in ('Agent', 'Queue') and (dt.cal_date between CURRENT_DATE - 7 and CURRENT_DATE)
         )   r on sa.interaction_id = r.interaction_id
