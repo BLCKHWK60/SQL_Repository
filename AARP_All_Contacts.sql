@@ -32,7 +32,8 @@ select
         max(case when sdr_cust_atributes_key = 34 then atribute_value else null end) as Zip_Captured, 
         max(case when sdr_cust_atributes_key = 35 then atribute_value else null end) as Zip_Request,
         max(case when sdr_cust_atributes_key = 49 then atribute_value else null end) as Address,
-        max(case when sdr_cust_atributes_key = 50 then atribute_value else null end) as Intro_Option
+        max(case when sdr_cust_atributes_key = 50 then atribute_value else null end) as Intro_Option,
+        max(case when sdr_cust_atributes_key = 51 then atribute_value else null end) as Postal_Code
 FROM sdr_Cust_Atributes_Fact scaf
 inner join sdr_session_fact         ssf     on  (ssf.session_id             =   scaf.session_id)
 inner join date_time                dt      on  (ssf.start_date_time_key    =   dt.date_time_key)
