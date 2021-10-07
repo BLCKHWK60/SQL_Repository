@@ -55,7 +55,8 @@ from All_Contacts_Table act
 group by act.Delivery_Date
     
 
----- Attributes I may need during the build ---
+
+---- Attributes I may need during the build ----
         --max(case when sdr_cust_atributes_key = 1 then atribute_value else null end) as ANI,
         --max(case when sdr_cust_atributes_key = 2 then atribute_value else null end) as Caregiving_Menu,
         --max(case when sdr_cust_atributes_key = 3 then atribute_value else null end) as DNIS,
