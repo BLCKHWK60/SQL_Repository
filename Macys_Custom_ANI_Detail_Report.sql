@@ -24,7 +24,8 @@ with irf as (
       inner join INTERACTION_DESCRIPTOR idk    on (udk.INTERACTION_DESCRIPTOR_KEY = idk.INTERACTION_DESCRIPTOR_KEY)
       inner join RESOURCE_              r     on (r.resource_key = irf.last_vqueue_resource_key)
     where 1=1
-      and irf.START_DATE_TIME_KEY between (select RANGE_START_KEY from RELATIVE_RANGE where range_name='Week to Date') and (select RANGE_END_KEY-1 from RELATIVE_RANGE where range_name='Week to Date') 
+     and irf.START_DATE_TIME_KEY >= (select min(date_time_key) as Label_key from date_time where date(cal_date) = current_date - 10)  
+ and irf.START_DATE_TIME_KEY <= (select max(date_time_key) as Label_key from date_time where date(cal_date) = current_date)
 and media_type_key = 1
   
       
@@ -56,7 +57,8 @@ and media_type_key = 1
       1 count_interaction     
     from interaction_fact
     where 1=1
-      and START_DATE_TIME_KEY between (select RANGE_START_KEY from RELATIVE_RANGE where range_name='Week to Date') and (select RANGE_END_KEY-1 from RELATIVE_RANGE where range_name='Week to Date') 
+and START_DATE_TIME_KEY >= (select min(date_time_key) as Label_key from date_time where date(cal_date) = current_date - 10)  
+ and START_DATE_TIME_KEY <= (select max(date_time_key) as Label_key from date_time where date(cal_date) = current_date)
 and media_type_key = 1 
       
       
@@ -84,7 +86,7 @@ select
    sum(irf.customer_handle_time) as CHT,
    sum(itf.interaction_duration) as TOTDURATION,
    sum(count_interaction) as Count_Interaction
- from irf
+from irf
    inner join itf on irf.INTERACTION_ID=itf.INTERACTION_ID and irf.INTERACTION_SDT_KEY=itf.START_DATE_TIME_KEY and itf.start_date_time_key=irf.start_date_time_key
    inner join resource_ rs on (irf.Resource_key= rs.Resource_key)
    inner join date_time dt on (irf.start_date_time_key=dt.date_time_key)
