@@ -27,10 +27,12 @@ Group by dt.LABEL_YYYY_MM_DD, scaf.session_id
 
 Select
     act.Delivery_Date,
-    count(*) as Total_Inbound,
+    count(*)                                                                        as Total_Inbound,
     sum(case when act.External_Transfer_Result  is not null     then 1 else 0 end)  as Selections_Made,
     sum(case when act.External_Transfer_Result  = 'Success'     then 1 else 0 end)  as Direct_Connect_Success,
-    sum(case when act.External_Transfer_Result  = 'Fail'        then 1 else 0 end)  as Direct_Connect_Failer,
+    sum(case when act.External_Transfer_Result  = 'Fail'        then 1 else 0 end)  as Direct_Connect_Failed,
+    sum(case when act.External_Transfer_Result  = 'false'       then 1 else 0 end)  as Direct_Connect_False,
+    sum(case when act.External_Transfer_Result  = 'true'        then 1 else 0 end)  as Direct_Connect_True,
     sum(case when act.Legislator_Lookup_Result  = 'Fail'        then 1 else 0 end)  as third_Party_API_Fail,
     sum(case when act.Legislator_Amount         = 'Multiple'    then 1 else 0 end)  as third_Party_API_Multiple,
     sum(case when act.Legislator_Amount         = 'Single'      then 1 else 0 end)  as third_Party_API_Single,
@@ -40,6 +42,7 @@ Select
     sum(case when act.Intro_Option              = 'End Call'    then 1 else 0 end)  as Intro_Option_End_Call,
     sum(case when act.Intro_Option              = 'Transfer'    then 1 else 0 end)  as Intro_Option_Transfer,
     sum(case when act.Intro_Option              = 'Repeat'      then 1 else 0 end)  as Intro_Option_Repeat,
+    sum(case when act.Intro_Option              = 'Hang Up'     then 1 else 0 end)  as Intro_Option_HangUp,
     sum(case when act.Address_Lookup_Result     = 'Not Found'   then 1 else 0 end)  as Address_Missing,
     sum(case when act.Address_Lookup_Result     = 'AARP DB API' then 1 else 0 end)  as Address_AARP,
     sum(case when act.Address_Lookup_Result     = 'Source Data' then 1 else 0 end)  as Address_Source_Data,
