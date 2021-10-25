@@ -22,6 +22,7 @@ FROM sdr_Cust_Atributes_Fact scaf
 inner join sdr_session_fact         ssf     on  (ssf.session_id             =   scaf.session_id)
 inner join date_time                dt      on  (ssf.start_date_time_key    =   dt.date_time_key)
 where dt.cal_date between CURRENT_DATE - 3 and CURRENT_DATE
+--where dt.cal_date >(current_date - interval '1 week') --Test this method against the other for run time--
 Group by dt.LABEL_YYYY_MM_DD, scaf.session_id
 )
 
