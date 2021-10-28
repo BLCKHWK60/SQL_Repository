@@ -17,18 +17,18 @@ with All_Contacts_Table as
         max(case when sdr_cust_atributes_key = 18 then atribute_value else null end) as Legislator,
         max(case when sdr_cust_atributes_key = 26 then atribute_value else null end) as Legislator_Amount,
         max(case when sdr_cust_atributes_key = 27 then atribute_value else null end) as Legislator_Lookup_Result,
-        max(case when sdr_cust_atributes_key = 28 then atribute_value else null end) as Legislator_Number
+        max(case when sdr_cust_atributes_key = 28 then atribute_value else null end) as Legislator_Number,
+        max(case when sdr_cust_atributes_key = 53 then atribute_value else null end) as Campaign_Name
 FROM sdr_Cust_Atributes_Fact scaf
 inner join sdr_session_fact         ssf     on  (ssf.session_id             =   scaf.session_id)
 inner join date_time                dt      on  (ssf.start_date_time_key    =   dt.date_time_key)
-where dt.cal_date between CURRENT_DATE - 3 and CURRENT_DATE
---where dt.cal_date >(current_date - interval '1 week') --Test this method against the other for run time--
+where dt.cal_date >(current_date - interval '1 week')
 Group by dt.LABEL_YYYY_MM_DD, scaf.session_id
 )
 
 Select
     act.Delivery_Date,
-    count(*)                                                                        as Total_Inbound,
+    act.Campaign_Name,
     sum(case when act.External_Transfer_Result  is not null     then 1 else 0 end)  as Selections_Made,
     sum(case when act.External_Transfer_Result  = 'Success'     then 1 else 0 end)  as Direct_Connect_Success,
     sum(case when act.External_Transfer_Result  = 'Fail'        then 1 else 0 end)  as Direct_Connect_Failed,
@@ -52,29 +52,11 @@ Select
     sum(case when act.Zip_Request               = 'Timed Out'   then 1 else 0 end)  as Zip_Request_Timed_Out,
     sum(case when act.AARP_Lookup_Result        = 'Fail'        then 1 else 0 end)  as AARP_API_Fail,
     sum(case when act.AARP_Lookup_Result        = 'Success'     then 1 else 0 end)  as AARP_API_Success,
+    count(*)                                                                        as Total_Inbound,
     round(max(act.End_Time - act.Start_Time),2)                                     as Total_Duration,
     round(max(act.End_Time - act.Start_Time)/Count(*),2)                            as Avg_Duration
 
 from All_Contacts_Table act
-group by act.Delivery_Date
+group by act.Delivery_Date, act.Campaign_Name
     
-
-
----- Attributes I may need during the build ----
-        --max(case when sdr_cust_atributes_key = 1 then atribute_value else null end) as ANI,
-        --max(case when sdr_cust_atributes_key = 2 then atribute_value else null end) as Caregiving_Menu,
-        --max(case when sdr_cust_atributes_key = 3 then atribute_value else null end) as DNIS,
-        --max(case when sdr_cust_atributes_key = 4 then atribute_value else null end) as Department,
-        --max(case when sdr_cust_atributes_key = 5 then atribute_value else null end) as Jump_to,
-        --max(case when sdr_cust_atributes_key = 6 then atribute_value else null end) as Language_,
-        --max(case when sdr_cust_atributes_key = 7 then atribute_value else null end) as State_Abbr,
-        --max(case when sdr_cust_atributes_key = 19 then atribute_value else null end) as US_State,
-        --max(case when sdr_cust_atributes_key = 23 then atribute_value else null end) as Is_Attempt,
-        --max(case when sdr_cust_atributes_key = 24 then atribute_value else null end) as Is_Interactive,
-        --max(case when sdr_cust_atributes_key = 25 then atribute_value else null end) as LOB_Name,
-        --max(case when sdr_cust_atributes_key = 29 then atribute_value else null end) as Media_Type,
-        --max(case when sdr_cust_atributes_key = 30 then atribute_value else null end) as Source_Address,
-        --max(case when sdr_cust_atributes_key = 31 then atribute_value else null end) as Tenant_ID,
-        --max(case when sdr_cust_atributes_key = 32 then atribute_value else null end) as Tenant_Name,
-        --max(case when sdr_cust_atributes_key = 33 then atribute_value else null end) as Version_, 
 
