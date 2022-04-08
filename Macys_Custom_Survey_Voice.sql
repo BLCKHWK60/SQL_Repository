@@ -156,7 +156,7 @@ WITH Survey_Answers AS
 (Select
     mt.media_name as Media_Type,
     cast(irf.interaction_id as BIGINT) as Interaction_id,
-    --msf.media_server_ixn_guid as GUID,
+    irf.partyguid as GUID,
     irf.start_date_time_key, 
     irf.start_ts, 
     r.resource_name as VQueue,
@@ -193,7 +193,7 @@ Select
     timezone('America/New_york', to_timestamp(sa.start_ts)) as Start_Time_EST,
     timezone('GMT', to_timestamp(sa.start_ts)) as Start_Time_GMT,
     sa.interaction_id,
-    --sa.GUID, 
+    sa.GUID, 
     r1.Agent as Agent, 
     r1.Queue as Queue,   
     (case when sa.Q1 != '-1' then sa.Q1 else 'Not Answered' end) as q1, 
