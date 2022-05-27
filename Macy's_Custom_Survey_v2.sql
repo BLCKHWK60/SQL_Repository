@@ -190,21 +190,20 @@ Select
 
 from Survey_Answers sa
     
-    join    (select    a12.resource_name AS Agent, a14.resource_name AS Queue ,
-                    irf.start_date_time_key,
-                    irf.interaction_id
+    join    (select     a12.resource_name AS Agent, 
+                        a14.resource_name AS Queue ,
+                        irf.start_date_time_key,
+                        irf.interaction_id
             from interaction_resource_fact irf   
             left outer join MEDIATION_SEGMENT_FACT  msf on(msf.MEDIATION_SEGMENT_ID = irf.MEDIATION_SEGMENT_ID and irf.MEDIATION_RESOURCE_KEY = msf.RESOURCE_KEY)          
-            join (SELECT RESOURCE_GI2.* FROM RESOURCE_GI2 WHERE RESOURCE_TYPE_CODE='AGENT' AND RESOURCE_SUBTYPE='Agent') a12
-                on  (irf.RESOURCE_KEY = a12.RESOURCE_KEY)  
-            join (SELECT RESOURCE_.* FROM RESOURCE_ WHERE RESOURCE_TYPE_CODE in ('QUEUE','NONE','UNKNOWN')) a14
-                on  (msf.RESOURCE_KEY = a14.RESOURCE_KEY) 
+            join (SELECT RESOURCE_GI2.* FROM RESOURCE_GI2 WHERE RESOURCE_TYPE_CODE='AGENT' AND RESOURCE_SUBTYPE='Agent') a12 on  (irf.RESOURCE_KEY = a12.RESOURCE_KEY)  
+            join (SELECT RESOURCE_.* FROM RESOURCE_ WHERE RESOURCE_TYPE_CODE in ('QUEUE','NONE','UNKNOWN')) a14 on  (msf.RESOURCE_KEY = a14.RESOURCE_KEY) 
+
             where 
             irf.START_DATE_TIME_KEY >= (select min(date_time_key) as Label_key from date_time where date(cal_date) = current_date - 5)  
             and 
             irf.START_DATE_TIME_KEY <= (select max(date_time_key) as Label_key from date_time where date(cal_date) = current_date)
-            ) R1 
-        on sa.interaction_id = R1.interaction_id
+            ) R1 on sa.interaction_id = R1.interaction_id
     join DATE_TIME  dt  on  (dt.date_time_key       =   sa.start_date_time_key)
 
     Where r1.Queue NOT IN ('GSYS_VoiceHealthCheck_VQ', 'ChatHealthTestQueue', 'ixn_healthcheck_queue')

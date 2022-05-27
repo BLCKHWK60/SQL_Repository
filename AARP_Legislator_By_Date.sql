@@ -30,3 +30,5 @@ Select
  group by Date, DNIS, Campaign_Name, LOB_Name
 
  order by date asc
+
+ and clt.LOB_Name like %Advocacy%
