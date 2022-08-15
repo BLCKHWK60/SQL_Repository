@@ -43,7 +43,7 @@ Select
     sa.GUID, 
     r1.Agent as Agent, 
     r1.Queue as Queue,   
-    RANK() OVER (PARTITION BY sa.GUID, sa.interaction_id, r1.Agent ORDER BY sa.start_ts desc ) as Start_Time_Rank,
+    ROW_NUMBER() OVER (PARTITION BY sa.GUID, sa.interaction_id ORDER BY sa.start_ts desc ) as Start_Time_Rank,
     (case when sa.Q1 != '-1' then sa.Q1 else 'Not Answered' end) as q1, 
     (case when sa.q2 != '-1' then sa.q2 else 'Not Answered' end) as q2, 
     (case when sa.q3 != '-1' then sa.q3 else 'Not Answered' end) as q3,
@@ -69,4 +69,6 @@ from Survey_Answers sa
         on sa.interaction_id = R1.interaction_id
     join DATE_TIME  dt  on  (dt.date_time_key       =   sa.start_date_time_key)
 
-    Where r1.Queue NOT IN ('GSYS_VoiceHealthCheck_VQ', 'ChatHealthTestQueue')
+    Where r1.Queue NOT IN ('GSYS_VoiceHealthCheck_VQ', 'ChatHealthTestQueue')  and sa.Media_Type = 'Chat'
+ 
+order by sa.interaction_id asc
