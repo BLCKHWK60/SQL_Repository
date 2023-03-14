@@ -1,0 +1,517 @@
+{
+    "conversations": [
+      {
+        "conversationEnd": "2022-12-06T15:04:10.338Z",
+        "conversationId": "860293cc-64bd-43fd-803c-06a1f2982a6d",
+        "conversationStart": "2022-12-06T15:00:05.924Z",
+        "divisionIds": [
+          "028cadb9-ac94-4d2a-898e-2473441bf349",
+          "6f93fbc6-ad09-4e4c-9363-f3e682fd58d1"
+        ],
+        "externalTag": "Tag1 ,Tag2 ,Tag3",
+        "mediaStatsMinConversationMos": 4.392465468425597,
+        "mediaStatsMinConversationRFactor": 90.7978286743164,
+        "originatingDirection": "inbound",
+        "participants": [
+          {
+            "externalContactId": "83c80adc-1b96-4e23-98d0-4057ea9ba855",
+            "participantId": "39f6a88a-a764-4a89-ba0c-fc13f21414f2",
+            "participantName": "Leesburg VA",
+            "purpose": "customer",
+            "sessions": [
+              {
+                "agentBullseyeRing": 1,
+                "ani": "tel:+15714201643",
+                "direction": "inbound",
+                "dnis": "tel:+14158902109",
+                "edgeId": "8077aeb3-232c-4902-b540-1a2f83991680",
+                "mediaType": "voice",
+                "protocolCallId": "254298944_81182106@67.231.5.110",
+                "provider": "Edge",
+                "recording": true,
+                "remoteNameDisplayable": "Leesburg VA",
+                "requestedRoutings": [
+                  "Standard"
+                ],
+                "routingRing": 1,
+                "selectedAgentId": "f11f2a27-8060-4d72-8ba9-42b6e32e9c4d",
+                "sessionDnis": "tel:+14158902109",
+                "sessionId": "b8422d88-877d-4f4a-8938-618b64f44927",
+                "usedRouting": "Standard",
+                "mediaEndpointStats": [
+                  {
+                    "codecs": [
+                      "audio/opus"
+                    ],
+                    "eventTime": "2022-12-06T15:00:23.842Z",
+                    "maxLatencyMs": 30,
+                    "minMos": 4.882364350877812,
+                    "minRFactor": 92.44164276123047,
+                    "receivedPackets": 886
+                  },
+                  {
+                    "codecs": [
+                      "audio/opus"
+                    ],
+                    "eventTime": "2022-12-06T15:02:28.791Z",
+                    "maxLatencyMs": 40,
+                    "minMos": 4.877797361147453,
+                    "minRFactor": 92.24381256103516,
+                    "receivedPackets": 6243
+                  },
+                  {
+                    "codecs": [
+                      "audio/opus",
+                      "audio/opus",
+                      "audio/opus"
+                    ],
+                    "eventTime": "2022-12-06T15:03:51.541Z",
+                    "maxLatencyMs": 54,
+                    "minMos": 4.871010179827175,
+                    "minRFactor": 91.955322265625,
+                    "receivedPackets": 4137
+                  },
+                  {
+                    "codecs": [
+                      "audio/PCMU"
+                    ],
+                    "eventTime": "2022-12-06T15:06:58.310Z",
+                    "maxLatencyMs": 30,
+                    "minMos": 4.392465468425597,
+                    "minRFactor": 92.36125946044922,
+                    "receivedPackets": 20592
+                  },
+                  {
+                    "codecs": [
+                      "audio/opus"
+                    ],
+                    "eventTime": "2022-12-06T15:06:58.314Z",
+                    "maxLatencyMs": 31,
+                    "minMos": 4.88188880017889,
+                    "minRFactor": 92.4208984375,
+                    "receivedPackets": 9337
+                  }
+                ],
+                "metrics": [
+                  {
+                    "emitDate": "2022-12-06T15:00:06.161Z",
+                    "name": "nConnected",
+                    "value": 1
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:03:51.543Z",
+                    "name": "tConnected",
+                    "value": 225382
+                  }
+                ],
+                "segments": [
+                  {
+                    "conference": false,
+                    "segmentEnd": "2022-12-06T15:00:06.161Z",
+                    "segmentStart": "2022-12-06T15:00:05.925Z",
+                    "segmentType": "system"
+                  },
+                  {
+                    "conference": false,
+                    "destinationConversationId": "6e18c387-6e12-4d1d-8c7b-f77e6296bff3",
+                    "queueId": "ee66c6bd-3a3b-43eb-906b-73c3fab36f94",
+                    "segmentEnd": "2022-12-06T15:03:51.543Z",
+                    "segmentStart": "2022-12-06T15:00:06.161Z",
+                    "segmentType": "interact"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "participantId": "99d749d9-77e7-4b3c-98a4-d55cc5bdc0d8",
+            "participantName": "San Francisco CA",
+            "purpose": "ivr",
+            "sessions": [
+              {
+                "ani": "tel:+15714201643",
+                "direction": "inbound",
+                "dnis": "tel:+14158902109",
+                "edgeId": "8077aeb3-232c-4902-b540-1a2f83991680",
+                "mediaType": "voice",
+                "peerId": "b8422d88-877d-4f4a-8938-618b64f44927",
+                "protocolCallId": "394ad908-5dbc-4113-b817-95f3edc0c244",
+                "provider": "Edge",
+                "remote": "Leesburg VA",
+                "remoteNameDisplayable": "San Francisco CA",
+                "sessionDnis": "tel:+14158902109",
+                "sessionId": "7d50a299-0330-4dfc-9d71-0130d15d0769",
+                "mediaEndpointStats": [
+                  {
+                    "codecs": [
+                      "audio/opus"
+                    ],
+                    "eventTime": "2022-12-06T15:00:23.842Z",
+                    "maxLatencyMs": 50,
+                    "minMos": 4.842281326385211,
+                    "minRFactor": 90.7978286743164,
+                    "receivedPackets": 885
+                  }
+                ],
+                "flow": {
+                  "endingLanguage": "en-us",
+                  "entryReason": "tel:+14158902109",
+                  "entryType": "dnis",
+                  "exitReason": "TRANSFER",
+                  "flowId": "d167b874-abcc-4921-8a42-e88cabc30e5a",
+                  "flowName": "Dan's Main Profile",
+                  "flowType": "INBOUNDCALL",
+                  "flowVersion": "42.0",
+                  "startingLanguage": "en-us",
+                  "transferTargetAddress": "ee66c6bd-3a3b-43eb-906b-73c3fab36f94",
+                  "transferTargetName": "Workgroup1",
+                  "transferType": "ACD",
+                  "outcomes": [
+                    {
+                      "flowOutcome": "06e00e62-004c-4c9b-aa42-c1e1d5120c57:SUCCESS",
+                      "flowOutcomeEndTimestamp": "2022-12-06T15:00:21.061Z",
+                      "flowOutcomeId": "06e00e62-004c-4c9b-aa42-c1e1d5120c57",
+                      "flowOutcomeStartTimestamp": "2022-12-06T15:00:21.061Z",
+                      "flowOutcomeValue": "SUCCESS"
+                    }
+                  ]
+                },
+                "metrics": [
+                  {
+                    "emitDate": "2022-12-06T15:00:06.253Z",
+                    "name": "nFlow",
+                    "value": 1
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:00:21.061Z",
+                    "name": "nFlowOutcome",
+                    "value": 1
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:00:21.061Z",
+                    "name": "tFlowOutcome",
+                    "value": 1
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:00:21.063Z",
+                    "name": "nFlowMilestone",
+                    "value": 1
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:00:21.063Z",
+                    "name": "oFlowMilestone",
+                    "value": 1
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:00:21.078Z",
+                    "name": "nFlowMilestone",
+                    "value": 1
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:00:21.078Z",
+                    "name": "oFlowMilestone",
+                    "value": 1
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:00:23.799Z",
+                    "name": "tIvr",
+                    "value": 17725
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:00:23.805Z",
+                    "name": "tFlow",
+                    "value": 17552
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:00:23.805Z",
+                    "name": "tFlowExit",
+                    "value": 17552
+                  }
+                ],
+                "segments": [
+                  {
+                    "conference": false,
+                    "segmentEnd": "2022-12-06T15:00:06.074Z",
+                    "segmentStart": "2022-12-06T15:00:05.997Z",
+                    "segmentType": "system"
+                  },
+                  {
+                    "conference": false,
+                    "disconnectType": "transfer",
+                    "segmentEnd": "2022-12-06T15:00:23.799Z",
+                    "segmentStart": "2022-12-06T15:00:06.074Z",
+                    "segmentType": "ivr",
+                    "wrapUpCode": "59961369-7bfd-4937-a61b-33c5d154b8b1"
+                  },
+                  {
+                    "conference": false,
+                    "disconnectType": "transfer",
+                    "segmentEnd": "2022-12-06T15:00:21.184Z",
+                    "segmentStart": "2022-12-06T15:00:21.184Z",
+                    "segmentType": "wrapup",
+                    "wrapUpCode": "59961369-7bfd-4937-a61b-33c5d154b8b1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "participantId": "62457e8f-f2d0-4c85-b0bb-87cbf52141a7",
+            "participantName": "Workgroup1",
+            "purpose": "acd",
+            "sessions": [
+              {
+                "agentBullseyeRing": 1,
+                "ani": "tel:+15714201643",
+                "destinationAddresses": [
+                  "sip:hari.porandla%40genesys.com@localhost"
+                ],
+                "direction": "inbound",
+                "dnis": "tel:+14158902109",
+                "edgeId": "58803686-e866-4464-8052-0311637a8dc8",
+                "flowInType": "ivr",
+                "mediaType": "voice",
+                "peerId": "b8422d88-877d-4f4a-8938-618b64f44927",
+                "protocolCallId": "97388d63-2cd2-461e-919b-4b6268398f4c",
+                "provider": "Edge",
+                "remote": "Leesburg VA",
+                "remoteNameDisplayable": "Workgroup1",
+                "requestedRoutings": [
+                  "Standard"
+                ],
+                "routingRing": 1,
+                "selectedAgentId": "f11f2a27-8060-4d72-8ba9-42b6e32e9c4d",
+                "sessionDnis": "tel:+14158902109",
+                "sessionId": "fa36372b-0d51-41ca-81ca-fd25be97b39e",
+                "usedRouting": "Standard",
+                "mediaEndpointStats": [
+                  {
+                    "codecs": [
+                      "audio/opus"
+                    ],
+                    "eventTime": "2022-12-06T15:02:28.844Z",
+                    "maxLatencyMs": 31,
+                    "minMos": 4.881244272489685,
+                    "minRFactor": 92.39283752441406,
+                    "receivedPackets": 6243
+                  }
+                ],
+                "flow": {
+                  "flowId": "798428c4-702a-4ffa-af73-9f38bc89491c",
+                  "flowName": "Dan's In-Queue Flow",
+                  "flowType": "INQUEUECALL",
+                  "flowVersion": "16.0",
+                  "startingLanguage": "en-us"
+                },
+                "metrics": [
+                  {
+                    "emitDate": "2022-12-06T15:00:23.875Z",
+                    "name": "nOffered",
+                    "value": 1
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:02:28.790Z",
+                    "name": "tAcd",
+                    "value": 124915
+                  }
+                ],
+                "segments": [
+                  {
+                    "conference": false,
+                    "queueId": "ee66c6bd-3a3b-43eb-906b-73c3fab36f94",
+                    "segmentEnd": "2022-12-06T15:00:23.875Z",
+                    "segmentStart": "2022-12-06T15:00:23.809Z",
+                    "segmentType": "delay",
+                    "scoredAgents": [
+                      {
+                        "agentScore": 80,
+                        "scoredAgentId": "0c9d12af-e481-4439-88be-2004d8aff1e8"
+                      },
+                      {
+                        "agentScore": 80,
+                        "scoredAgentId": "92b4bc4c-2df3-431b-b967-dd6d482f8e11"
+                      }
+                    ]
+                  },
+                  {
+                    "conference": false,
+                    "disconnectType": "transfer",
+                    "queueId": "ee66c6bd-3a3b-43eb-906b-73c3fab36f94",
+                    "segmentEnd": "2022-12-06T15:02:28.790Z",
+                    "segmentStart": "2022-12-06T15:00:23.875Z",
+                    "segmentType": "interact",
+                    "sipResponseCodes": [
+                      410
+                    ],
+                    "scoredAgents": [
+                      {
+                        "agentScore": 80,
+                        "scoredAgentId": "0c9d12af-e481-4439-88be-2004d8aff1e8"
+                      },
+                      {
+                        "agentScore": 80,
+                        "scoredAgentId": "92b4bc4c-2df3-431b-b967-dd6d482f8e11"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "participantId": "57ec8554-80c6-4677-9eb4-119bdfda6fb7",
+            "purpose": "agent",
+            "userId": "f11f2a27-8060-4d72-8ba9-42b6e32e9c4d",
+            "sessions": [
+              {
+                "agentBullseyeRing": 1,
+                "ani": "tel:+15714201643",
+                "direction": "inbound",
+                "dnis": "tel:+14158902109",
+                "edgeId": "58803686-e866-4464-8052-0311637a8dc8",
+                "mediaType": "voice",
+                "peerId": "b8422d88-877d-4f4a-8938-618b64f44927",
+                "protocolCallId": "e6ca9478-be61-4df1-85f1-bf501abb8ef3",
+                "provider": "Edge",
+                "remote": "Leesburg VA",
+                "requestedRoutings": [
+                  "Standard"
+                ],
+                "routingRing": 1,
+                "selectedAgentId": "f11f2a27-8060-4d72-8ba9-42b6e32e9c4d",
+                "sessionDnis": "sip:61a648d2d318341b213ef51c+genpstest.orgspan.com;tgrp=819f0cf6-2cd2-4aa7-ad69-b6703bb6afe4;trunk-context=genpstest@localhost",
+                "sessionId": "e6d79667-79d5-4770-97c2-8144f81f448e",
+                "usedRouting": "Standard",
+                "mediaEndpointStats": [
+                  {
+                    "codecs": [
+                      "audio/opus",
+                      "audio/opus"
+                    ],
+                    "eventTime": "2022-12-06T15:03:51.524Z",
+                    "maxLatencyMs": 30,
+                    "minMos": 4.882769960355534,
+                    "minRFactor": 92.45936584472656,
+                    "receivedPackets": 3179
+                  },
+                  {
+                    "codecs": [
+                      "audio/opus"
+                    ],
+                    "discardedPackets": 15,
+                    "eventTime": "2022-12-06T15:03:51.556Z",
+                    "maxLatencyMs": 51,
+                    "minMos": 4.84234262319999,
+                    "minRFactor": 90.80020141601562,
+                    "receivedPackets": 3139
+                  }
+                ],
+                "metrics": [
+                  {
+                    "emitDate": "2022-12-06T15:02:28.753Z",
+                    "name": "nOverSla",
+                    "value": 1
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:02:28.753Z",
+                    "name": "tAlert",
+                    "value": 4850
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:02:28.753Z",
+                    "name": "tAnswered",
+                    "value": 124915
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:03:32.102Z",
+                    "name": "tTalk",
+                    "value": 63349
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:03:51.445Z",
+                    "name": "tHeld",
+                    "value": 19343
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:03:51.489Z",
+                    "name": "nBlindTransferred",
+                    "value": 1
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:03:51.489Z",
+                    "name": "nTransferred",
+                    "value": 1
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:03:51.489Z",
+                    "name": "tHeldComplete",
+                    "value": 19343
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:03:51.489Z",
+                    "name": "tTalk",
+                    "value": 44
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:03:51.489Z",
+                    "name": "tTalkComplete",
+                    "value": 63393
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:04:10.338Z",
+                    "name": "tAcw",
+                    "value": 19000
+                  },
+                  {
+                    "emitDate": "2022-12-06T15:04:10.338Z",
+                    "name": "tHandle",
+                    "value": 101585
+                  }
+                ],
+                "segments": [
+                  {
+                    "conference": false,
+                    "queueId": "ee66c6bd-3a3b-43eb-906b-73c3fab36f94",
+                    "segmentEnd": "2022-12-06T15:02:28.753Z",
+                    "segmentStart": "2022-12-06T15:02:23.903Z",
+                    "segmentType": "alert"
+                  },
+                  {
+                    "conference": false,
+                    "queueId": "ee66c6bd-3a3b-43eb-906b-73c3fab36f94",
+                    "segmentEnd": "2022-12-06T15:03:32.102Z",
+                    "segmentStart": "2022-12-06T15:02:28.753Z",
+                    "segmentType": "interact"
+                  },
+                  {
+                    "conference": false,
+                    "queueId": "ee66c6bd-3a3b-43eb-906b-73c3fab36f94",
+                    "segmentEnd": "2022-12-06T15:03:51.445Z",
+                    "segmentStart": "2022-12-06T15:03:32.102Z",
+                    "segmentType": "hold"
+                  },
+                  {
+                    "conference": false,
+                    "disconnectType": "conferenceTransfer",
+                    "queueId": "ee66c6bd-3a3b-43eb-906b-73c3fab36f94",
+                    "segmentEnd": "2022-12-06T15:04:10.338Z",
+                    "segmentStart": "2022-12-06T15:03:51.338Z",
+                    "segmentType": "wrapup",
+                    "wrapUpCode": "c90369d9-ae7e-4ff0-aa53-4115dfdca185"
+                  },
+                  {
+                    "conference": false,
+                    "disconnectType": "conferenceTransfer",
+                    "queueId": "ee66c6bd-3a3b-43eb-906b-73c3fab36f94",
+                    "segmentEnd": "2022-12-06T15:03:51.489Z",
+                    "segmentStart": "2022-12-06T15:03:51.445Z",
+                    "segmentType": "interact"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
